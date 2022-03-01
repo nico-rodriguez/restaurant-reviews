@@ -1,4 +1,4 @@
-import { ObjectId} from 'mongodb';
+import { ObjectId } from 'mongodb';
 
 let reviews;
 
@@ -26,7 +26,6 @@ export default class ReviewsDAO {
         text: review,
         restaurant_id: ObjectId(restaurantId),
       };
-      // console.log('HERE!!!');
 
 
       return await reviews.insertOne(reviewDoc);

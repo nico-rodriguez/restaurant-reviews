@@ -8,7 +8,7 @@ router
   .route('/:restaurantId/reviews')
   .post(ReviewsController.apiPostReview);
 router
-  .route('/:restaurantId/reviews/:review_id')
+  .route('/:restaurantId/reviews/:reviewId')
   .put(ReviewsController.apiUpdateReview)
   .delete(ReviewsController.apiDeleteReview);
 
