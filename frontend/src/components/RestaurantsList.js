@@ -4,6 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import RestaurantDataService from '../services/restaurant.service';
+import CuisineDataService from '../services/cuisine.service';
 
 export default function RestaurantsList() {
   const [restaurants, setRestaurants] = useState([]);
@@ -42,7 +43,7 @@ export default function RestaurantsList() {
   };
 
   const retrieveCuisines = () => {
-    RestaurantDataService.getCuisines()
+    CuisineDataService.getCuisines()
       .then(({ data }) => {
         setCuisines(['All cuisines'].concat(data));
       })

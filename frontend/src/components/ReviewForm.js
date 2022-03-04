@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 
-import RestaurantDataService from '../services/restaurant.service';
+import ReviewDataService from '../services/review.service';
 
 
 export default function ReviewForm() {
@@ -28,7 +28,7 @@ export default function ReviewForm() {
 
     if (editing) {
       data.review_id = reviewId;
-      RestaurantDataService.updateReview(data, restaurantId, reviewId)
+      ReviewDataService.updateReview(data, restaurantId, reviewId)
         .then(() => {
           setSubmitted(true);
         })
@@ -36,7 +36,7 @@ export default function ReviewForm() {
           console.error(error);
         });
     } else {
-      RestaurantDataService.createReview(data, restaurantId)
+      ReviewDataService.createReview(data, restaurantId)
         .then(() => {
           setSubmitted(true);
         }).catch((error) => {

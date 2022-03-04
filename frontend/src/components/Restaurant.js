@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 
 import RestaurantDataService from '../services/restaurant.service';
+import ReviewDataService from '../services/review.service';
 
 export default function Restaurant() {
   const initialRestaurantState = {
@@ -26,7 +27,7 @@ export default function Restaurant() {
   };
 
   const deleteReview = (reviewId, index) => {
-    RestaurantDataService.deleteReview(restaurantId, reviewId, user.id)
+    ReviewDataService.deleteReview(restaurantId, reviewId, user.id)
       .then(() => {
         setRestaurant((prevState) => {
           prevState.reviews.splice(index, 1);
